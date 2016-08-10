@@ -24,13 +24,13 @@ ln -s /opt/webbugserver /ahead/attribution/webbugserver
 ln -s /opt/weblabyrinth /ahead/annoyance/weblabyrinth
 ln -s /opt/whosthere /ahead/attribution/whosthere
 ln -s /opt/wordpot /ahead/annoyance/wordpot
-apt-get install python python-pip python-dev build-essential ruby sqlite3 sqlite python-nfqueue python-gevent golang golang-go apache2 php5 php5-mysql php5-pgsql php5-sqlite php5-odbc openjdk-7-jdk postgresql postgresql-contrib python-twisted ssh iptables libsmi2ldbl libevent-dev libxslt1-dev libxml2-dev -y
+
 
 echo "127.0.0.1     spy.decloak.net" >> /etc/hosts
 
 
 #database mysql
-sudo apt-get -y install mysql-server
+apt-get -y install mysql-server
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password ahead'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password ahead'
 echo "create database weblabyrinth;" | mysql -u root --password=ahead
