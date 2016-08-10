@@ -28,9 +28,10 @@ ln -s /opt/wordpot /ahead/annoyance/wordpot
 
 echo "127.0.0.1     spy.decloak.net" >> /etc/hosts
 
+apt-get install python python-pip python-dev build-essential ruby sqlite3 sqlite python-nfqueue python-gevent golang golang-go apache2 php5 php5-mysql php5-pgsql php5-sqlite php5-odbc openjdk-7-jdk postgresql postgresql-contrib python-twisted ssh iptables libsmi2ldbl libevent-dev libxslt1-dev libxml2-dev -y
 
 #database mysql
-apt-get -y install mysql-server
+apt-get install mysql-server -y
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password ahead'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password ahead'
 echo "create database weblabyrinth;" | mysql -u root --password=ahead
