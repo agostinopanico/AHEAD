@@ -30,6 +30,7 @@ echo "127.0.0.1     spy.decloak.net" >> /etc/hosts
 
 
 #database mysql
+sudo apt-get -y install mysql-server
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password ahead'
 debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password ahead'
 echo "create database weblabyrinth;" | mysql -u root --password=ahead
