@@ -129,5 +129,5 @@ make
 make install
 
 #post install
-git clone https://github.com/adhdproject/webkit /var/www
+git clone https://github.com/agostinopanico/AHEAD/tree/master/webkit /var/www
 chown www-data:www-data -R /var/www
