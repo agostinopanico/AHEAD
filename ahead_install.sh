@@ -1,6 +1,7 @@
 #!/bin/dash
 
 echo "127.0.0.1     spy.decloak.net" >> /etc/hosts
+apt-get install python python-pip python-dev build-essential ruby sqlite3 sqlite python-nfqueue python-gevent golang golang-go apache2 php5 php5-mysql php5-pgsql php5-sqlite php5-odbc openjdk-7-jdk postgresql postgresql-contrib python-twisted ssh iptables libsmi2ldbl libevent-dev libxslt1-dev libxml2-dev wget -y
 
 #database mysql
 debconf-set-selections <<< 'mysql-server mysql-server/root_password password ahead'
@@ -95,7 +96,6 @@ EOF
 #post install www
 chown www-data:www-data /var/www -R
 
-apt-get install python python-pip python-dev build-essential ruby sqlite3 sqlite python-nfqueue python-gevent golang golang-go apache2 php5 php5-mysql php5-pgsql php5-sqlite php5-odbc openjdk-7-jdk postgresql postgresql-contrib python-twisted ssh iptables libsmi2ldbl libevent-dev libxslt1-dev libxml2-dev wget -y
 #Install portspoof
 cd /opt/portspoof
 ./configure
