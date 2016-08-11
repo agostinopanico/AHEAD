@@ -95,6 +95,12 @@ EOF
 
 #post install www
 chown www-data:www-data /var/www -R
+#install Conpot
+
+cd /opt
+git clone git@github.com:mushorg/conpot.git
+cd conpot
+python setup.py install
 
 #Install portspoof
 cd /opt/portspoof
