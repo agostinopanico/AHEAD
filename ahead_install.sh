@@ -1,30 +1,4 @@
 #!/bin/dash
-cd /
-mkdir ahead
-cd ahead
-mkdir annoyance
-mkdir attribution
-
-cd /
-ln -s /opt/artillery /ahead/annoyance/artillery
-ln -s /opt/beartrap /ahead/annoyance/beartrap
-ln -s /opt/cryptolocked /ahead/annoyance/cryptolocked
-ln -s /opt/decloak /ahead/attribution/decloak
-ln -s /opt/honeybadger /ahead/attribution/honeybadger
-ln -s /opt/jar-combiner /ahead/attribution/jar-combiner
-ln -s /opt/kippo /ahead/annoyance/kippo
-ln -s /opt/nova /ahead/annoyance/nova
-ln -s /opt/oschameleon /ahead/annoyance/oschameleon
-ln -s /opt/portspoof /ahead/annoyance/portspoof
-ln -s /opt/rubberglue /ahead/annoyance/rubberglue
-ln -s /opt/sqlitebugserver /ahead/attribution/sqlitebugserver
-ln -s /opt/spidertrap /ahead/annoyance/spidertrap
-ln -s /opt/tcprooter /ahead/annoyance/tcprooter
-ln -s /opt/webbugserver /ahead/attribution/webbugserver
-ln -s /opt/weblabyrinth /ahead/annoyance/weblabyrinth
-ln -s /opt/whosthere /ahead/attribution/whosthere
-ln -s /opt/wordpot /ahead/annoyance/wordpot
-
 
 echo "127.0.0.1     spy.decloak.net" >> /etc/hosts
 
@@ -121,7 +95,8 @@ EOF
 #post install www
 chown www-data:www-data /var/www -R
 
-
+apt-get install python python-pip python-dev build-essential ruby sqlite3 sqlite python-nfqueue python-gevent golang golang-go apache2 php5 php5-mysql php5-pgsql php5-sqlite php5-odbc openjdk-7-jdk postgresql postgresql-contrib python-twisted ssh iptables libsmi2ldbl libevent-dev libxslt1-dev libxml2-dev wget git
+nano vim -y
 #Install portspoof
 cd /opt/portspoof
 ./configure
@@ -129,5 +104,5 @@ make
 make install
 
 #post install
-git clone https://github.com/agostinopanico/AHEAD/tree/master/webkit /var/www
+cp -r /tmp/AHEAD/webkit/ /var/www/html/
 chown www-data:www-data -R /var/www
