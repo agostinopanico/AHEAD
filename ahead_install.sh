@@ -107,7 +107,9 @@ cd /opt/portspoof
 ./configure
 make
 make install
+#Install Artyllery
 
+yes | python /opt/artillery/manual_setup.py
 #post install
 cp -r /tmp/AHEAD/webkit/ /var/www/html/
 chown www-data:www-data -R /var/www
